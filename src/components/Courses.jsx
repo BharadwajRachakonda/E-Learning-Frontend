@@ -40,7 +40,7 @@ function Courses({ user }) {
       alert("Successfully registered");
       fetchEnrollments(); // Fetch enrollments immediately after successful registration
     } else {
-      alert("Registration failed");
+      alert("Course already registered");
     }
   };
 

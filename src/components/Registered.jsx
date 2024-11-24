@@ -96,7 +96,7 @@ function Registered({ user, view, setView }) {
                   key={index}
                   className="bg-gray-100 p-6 rounded-lg shadow-md"
                 >
-                  <div className="flex justify-around items-center">
+                  <div className="flex justify-between items-center">
                     <h3 className="text-2xl font-semibold mb-4 text-gray-700 ">
                       {getCourseName(course.course_id)}
                     </h3>
@@ -138,6 +138,11 @@ function Registered({ user, view, setView }) {
                     >
                       View Course Content
                     </a>
+                  </div>
+                  <div>
+                    <small className="text-gray-500">
+                      {course.date_registered}
+                    </small>
                   </div>
                 </div>
               ))}

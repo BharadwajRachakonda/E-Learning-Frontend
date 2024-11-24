@@ -5,6 +5,7 @@ function Login({ user, setUser }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,6 +22,7 @@ function Login({ user, setUser }) {
       setUser({ id: data.id, name: data.name });
     } else {
       console.error("Login failed");
+      setError("username/password is wrong (email already exists)");
     }
   };
 
@@ -57,6 +59,7 @@ function Login({ user, setUser }) {
           onChange={(e) => setPassword(e.target.value)}
           className="w-full p-3 mb-6 border border-gray-300 rounded-lg bg-gray-50"
         />
+        {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
         <button
           type="submit"
           className="w-full bg-gradient-to-r from-blue-500 to-green-500 text-white p-3 rounded-lg transform transition-transform duration-300 ease-in-out hover:scale-105 hover:from-blue-700 hover:to-green-700"
